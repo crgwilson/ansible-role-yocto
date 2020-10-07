@@ -1,0 +1,34 @@
+---
+yocto_user: root
+yocto_group: root
+
+yocto_root_directory: /opt/yocto
+yocto_layer_directory: "{{ yocto_root_directory }}/layers"
+
+yocto_version: dunfell
+
+yocto_poky_direcotry: "{{ yocto_root_directory }}/poky"
+yocto_poky_source_uri: https://git.yoctoproject.org/git/poky
+yocto_poky_source_version: "{{ yocto_version }}"
+
+yocto_layers:
+  - openembedded-core
+  - meta-openembedded
+
+# Find more layers here: https://layers.openembedded.org/layerindex/branch/master/layers/
+yocto_layer_info:
+  openembedded-core:
+    source_uri: https://git.openembedded.org/openembedded-core
+    version: "{{ yocto_version }}"
+  meta-openembedded:
+    source_uri: https://git.openembedded.org/meta-openembedded
+    version: "{{ yocto_version }}"
+  meta-virtualization:
+    source_uri: https://git.yoctoproject.org/git/meta-virtualization
+    version: "{{ yocto_version }}"
+  meta-swupdate:
+    source_uri: https://github.com/sbabic/meta-swupdate
+    version: "{{ yocto_version }}"
+  meta-raspberrypi:
+    source_uri: https://git.yoctoproject.org/git/meta-raspberrypi
+    version: "{{ yocto_version }}"

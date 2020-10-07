@@ -1,0 +1,23 @@
+---
+yocto_packages:
+  - gawk
+  - make
+  - wget
+  - tar
+  - bzip2
+  - gzip
+  - python
+  - unzip
+  - perl
+  - patch
+  - diffutils
+  - diffstat
+  - cpp
+  - gcc
+  - gcc-c++
+  - glibc-devel
+  - texinfo
+  - chrpath
+  - socat
+  - SDL-devel
+  - xterm

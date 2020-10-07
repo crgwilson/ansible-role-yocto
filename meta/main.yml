@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: crgwilson
+  description: Setup a build server with for the Yocto Project
+  license: MIT
+  min_ansible_version: 2.10
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      versions:
+        - buster
+        - stretch
+
+  galaxy_tags:
+    - yocto
+    - openembedded
+
+dependencies:
+  - role: crgwilson.git

@@ -1,0 +1,32 @@
+---
+- name: Get OS specific vars
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Install requisite system packages
+  package:
+    name: "{{ yocto_packages }}"
+    state: present
+
+- name: Create Yocto build directories
+  file:
+    path: "{{ item }}"
+    owner: "{{ yocto_user }}"
+    group: "{{ yocto_group }}"
+    mode: 0755
+    state: directory
+  loop:
+    - "{{ yocto_root_directory }}"
+    - "{{ yocto_layer_directory }}"
+
+- name: Install Poky
+  git:
+    repo: "{{ yocto_poky_source_uri }}"
+    version: "{{ yocto_poky_source_version }}"
+    dest: "{{ yocto_layer_directory }}/poky"
+
+- name: Install other layers
+  git:
+    repo: "{{ yocto_layer_info[item]['source_uri'] }}"
+    version: "{{ yocto_layer_info[item]['version'] }}"
+    dest: "{{ yocto_layer_directory }}/{{ item }}"
+  loop: "{{ yocto_layers }}"

@@ -1,0 +1,13 @@
+---
+yocto_packages:
+  - gawk
+  - wget
+  - diffstat
+  - unzip
+  - texinfo
+  - gcc-multilib
+  - build-essential
+  - chrpath
+  - socat
+  - libsdl1.2-dev
+  - xterm
