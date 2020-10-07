@@ -1,5 +1,7 @@
 # Ansible role: Yocto
 
+![Molecule Test](https://github.com/crgwilson/ansible-role-yocto/workflows/Molecule%20Test/badge.svg)
+
 Install all the necessary components for a build environment using the [Yocto Project](https://www.yoctoproject.org/).
 
 * Install required packages as outlined in the [Yocto Project Quick Start Guide](https://www.yoctoproject.org/docs/1.8/yocto-project-qs/yocto-project-qs.html)
